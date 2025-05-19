@@ -1,0 +1,153 @@
+.grid-cell {
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s ease;
+}
+
+.grid-cell.filled {
+    border: 1px solid white;
+}
+
+/* .grid-cell.filled.bg-red-500 {
+    border: 2px #6e0a0a !important;
+} */
+
+.block-preview {
+    opacity: 0.7;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(5deg);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.block-piece {
+    cursor: grab;
+    transition: all 0.2s ease;
+    transform-origin: center;
+}
+
+.block-piece:hover {
+    transform: scale(1.05);
+}
+
+.block-piece:active {
+    cursor: grabbing;
+    transform: scale(0.98);
+}
+
+.game-over {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.line-clear {
+    animation: clearLine 0.4s forwards;
+}
+
+@keyframes clearLine {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+        background-color: white;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.valid-drop {
+    background-color: rgba(209, 213, 219, 0.5);
+}
+
+.invalid-drop {
+    background-color: rgba(239, 68, 68, 0.2);
+}
+
+.score-pop {
+    animation: scorePop 0.5s ease-out;
+}
+
+@keyframes scorePop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pre-placed {
+    animation: prePlacedFadeIn 1s forwards;
+}
+
+@keyframes prePlacedFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hint-highlight {
+    animation: hintPulse 1.5s infinite;
+}
+
+@keyframes hintPulse {
+    0% {
+        background-color: rgba(167, 243, 208, 0.3);
+    }
+
+    50% {
+        background-color: rgba(167, 243, 208, 0.7);
+    }
+
+    100% {
+        background-color: rgba(167, 243, 208, 0.3);
+    }
+}
+
+.combo-message {
+    animation: comboMessage 1s forwards;
+    transform-origin: center;
+}
+
+@keyframes comboMessage {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+        top: 20%;
+    }
+}
